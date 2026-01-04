@@ -87,7 +87,7 @@ export default function Home({ onNavigate }: HomeProps) {
             <div className="relative animate-fade-in">
               <div className="relative w-full h-96 md:h-[500px]">
                 <img
-                  src="/src/assets/whatsapp_image_2026-01-04_at_8.14.29_am.jpeg"
+                  src="/logo-main.jpeg"
                   alt="HEARTLINX Business Card"
                   className="w-full h-full object-contain rounded-2xl shadow-2xl animate-float"
                 />

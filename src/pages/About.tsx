@@ -60,7 +60,7 @@ export default function About() {
               <div className="relative">
                 <div className="aspect-square bg-gradient-to-br from-green-400 to-amber-400 rounded-2xl opacity-20 absolute inset-0 blur-2xl"></div>
                 <img
-                  src="/src/assets/whatsapp_image_2026-01-04_at_8.14.29_am_(1).jpeg"
+                  src="/logo.jpeg"
                   alt="HEARTLINX Logo"
                   className="relative w-full h-full object-contain p-8"
                 />

@@ -45,7 +45,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             onClick={() => handleNavClick('home')}
           >
             <img
-              src="/src/assets/whatsapp_image_2026-01-04_at_8.14.29_am_(1).jpeg"
+              src="/logo.jpeg"
               alt="HEARTLINX Logo"
               className="h-12 w-12 object-contain"
             />

@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <img
-                src="/src/assets/whatsapp_image_2026-01-04_at_8.14.29_am_(1).jpeg"
+                src="/logo.jpeg"
                 alt="HEARTLINX Logo"
                 className="h-12 w-12 object-contain"
               />
