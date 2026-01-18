@@ -67,12 +67,12 @@ export default function Products({ onNavigate }: ProductsProps) {
       gradient: 'from-amber-100 to-yellow-100',
     },
     {
-      name: 'Brown Organic Rice',
+      name: 'Non Basmati Rice',
       category: 'Rice',
       icon: '🍚',
       image: '/brown-rice.png',
       description:
-        'Nutritious brown rice grown organically without chemical fertilizers. Rich in fiber and essential nutrients.',
+        'Nutritious Non Basmati rice grown organically without chemical fertilizers. Rich in fiber and essential nutrients.',
       features: [
         'Certified organic',
         'High fiber content',
