@@ -41,7 +41,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-              <div className="space-y-6">
+              <div className="space-y-6 animate-slide-in-left">
                 <h2 className="text-3xl font-bold text-gray-900">Who We Are</h2>
                 <p className="text-gray-700 leading-relaxed">
                   HEARTLINX Global Trader And Exporters is a trusted name in the
@@ -57,20 +57,20 @@ export default function About() {
                   global trading landscape.
                 </p>
               </div>
-              <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-green-400 to-amber-400 rounded-2xl opacity-20 absolute inset-0 blur-2xl"></div>
+              <div className="relative animate-slide-in-right">
+                <div className="aspect-square bg-gradient-to-br from-green-400 to-amber-400 rounded-2xl opacity-20 absolute inset-0 blur-2xl animate-pulse-slow"></div>
                 <img
                   src="/logo.jpeg"
                   alt="HEARTLINX Logo"
-                  className="relative w-full h-full object-contain p-8"
+                  className="relative w-full h-full object-contain p-8 transform hover:scale-110 transition-transform duration-500"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl animate-fade-in-left transform hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-xl">
                 <div className="flex items-center space-x-3 mb-4">
-                  <Eye className="text-green-600" size={32} />
+                  <Eye className="text-green-600 animate-pulse-slow" size={32} />
                   <h3 className="text-2xl font-bold text-gray-900">
                     Our Vision
                   </h3>
@@ -83,9 +83,9 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-2xl">
+              <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-2xl animate-fade-in-right transform hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-xl">
                 <div className="flex items-center space-x-3 mb-4">
-                  <Target className="text-amber-600" size={32} />
+                  <Target className="text-amber-600 animate-pulse-slow" size={32} />
                   <h3 className="text-2xl font-bold text-gray-900">
                     Our Mission
                   </h3>
@@ -113,9 +113,10 @@ export default function About() {
                 return (
                   <div
                     key={index}
-                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 animate-scale-in group"
+                    style={{ animationDelay: `${index * 0.15}s` }}
                   >
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                       <Icon className="text-green-600" size={32} />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3">

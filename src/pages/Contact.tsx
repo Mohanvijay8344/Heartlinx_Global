@@ -55,12 +55,12 @@ export default function Contact() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div>
+            <div className="animate-slide-in-left">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">
                 Send Us a Message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
+                <div className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                   <label
                     htmlFor="name"
                     className="block text-sm font-semibold text-gray-700 mb-2"
@@ -74,12 +74,12 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all transform focus:scale-105"
                     placeholder="Your name"
                   />
                 </div>
 
-                <div>
+                <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                   <label
                     htmlFor="email"
                     className="block text-sm font-semibold text-gray-700 mb-2"
@@ -93,12 +93,12 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all transform focus:scale-105"
                     placeholder="your@email.com"
                   />
                 </div>
 
-                <div>
+                <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                   <label
                     htmlFor="phone"
                     className="block text-sm font-semibold text-gray-700 mb-2"
@@ -112,12 +112,12 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all transform focus:scale-105"
                     placeholder="+1 234 567 890"
                   />
                 </div>
 
-                <div>
+                <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                   <label
                     htmlFor="company"
                     className="block text-sm font-semibold text-gray-700 mb-2"
@@ -130,12 +130,12 @@ export default function Contact() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all transform focus:scale-105"
                     placeholder="Your company"
                   />
                 </div>
 
-                <div>
+                <div className="animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                   <label
                     htmlFor="message"
                     className="block text-sm font-semibold text-gray-700 mb-2"
@@ -149,28 +149,29 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all resize-none transform focus:scale-105"
                     placeholder="Tell us about your requirements..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-green-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                  className="w-full bg-green-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 transform hover:scale-105 animate-fade-in-up"
+                  style={{ animationDelay: '0.6s' }}
                 >
                   <span>Send Message</span>
                   <Send size={20} />
                 </button>
 
                 {isSubmitted && (
-                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
+                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg animate-scale-in">
                     Thank you! Your message has been sent successfully.
                   </div>
                 )}
               </form>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-8 animate-slide-in-right">
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">
                   Get In Touch
@@ -183,8 +184,8 @@ export default function Contact() {
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:shadow-md transition-shadow">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-fade-in-up group" style={{ animationDelay: '0.1s' }}>
+                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     <Phone className="text-green-600" size={24} />
                   </div>
                   <div>
@@ -206,8 +207,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:shadow-md transition-shadow">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-fade-in-up group" style={{ animationDelay: '0.2s' }}>
+                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     <Mail className="text-green-600" size={24} />
                   </div>
                   <div>
@@ -221,8 +222,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:shadow-md transition-shadow">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-fade-in-up group" style={{ animationDelay: '0.3s' }}>
+                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     <MapPin className="text-green-600" size={24} />
                   </div>
                   <div>
@@ -242,7 +243,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-green-100 to-amber-100 p-6 rounded-xl">
+              <div className="bg-gradient-to-br from-green-100 to-amber-100 p-6 rounded-xl transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                 <h3 className="font-bold text-gray-900 mb-3">
                   Business Hours
                 </h3>

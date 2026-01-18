@@ -145,12 +145,12 @@ export default function Services({ onNavigate }: ServicesProps) {
               return (
                 <div
                   key={index}
-                  className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                  className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 animate-scale-in group"
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     <Icon className="text-green-600" size={32} />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -187,10 +187,11 @@ export default function Services({ onNavigate }: ServicesProps) {
               {process.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up group"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                       {item.step}
                     </div>
                     <div className="flex-1">

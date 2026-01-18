@@ -56,40 +56,41 @@ export default function Home({ onNavigate }: HomeProps) {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <div className="space-y-6 animate-slide-in-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Connecting India's
-                <span className="text-green-600"> Finest Commodities</span> to
+                <span className="gradient-text-animated"> Finest Commodities</span> to
                 the World
               </h1>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                 We are interested in exporting Indian commodities like Turmeric,
                 Spices, Cold Pressed Oils and Rice to international markets as a
                 commission agent.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                 <button
                   onClick={() => onNavigate('contact')}
-                  className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300 flex items-center justify-center space-x-2 shadow-glow hover:shadow-glow-amber transform hover:-translate-y-1 hover:scale-105"
                 >
                   <span>Contact Us</span>
                   <ArrowRight size={20} />
                 </button>
                 <button
                   onClick={() => onNavigate('products')}
-                  className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold border-2 border-green-600 hover:bg-green-50 transition-all duration-300 shadow-md hover:shadow-lg"
+                  className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold border-2 border-green-600 hover:bg-green-50 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
                 >
                   View Products
                 </button>
               </div>
             </div>
 
-            <div className="relative animate-fade-in">
+            <div className="relative animate-slide-in-right">
               <div className="relative w-full h-96 md:h-[500px]">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-amber-400/20 rounded-2xl blur-2xl animate-pulse-slow"></div>
                 <img
                   src="/logo-main.jpeg"
                   alt="HEARTLINX Business Card"
-                  className="w-full h-full object-contain rounded-2xl shadow-2xl animate-float"
+                  className="relative w-full h-full object-contain rounded-2xl shadow-2xl animate-float hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>
@@ -112,22 +113,22 @@ export default function Home({ onNavigate }: HomeProps) {
             {products.map((product, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-white to-green-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-green-100"
+                className="glass-green p-8 rounded-2xl shadow-3d hover:shadow-glow transition-all duration-500 transform hover:-translate-y-3 border border-green-200 animate-scale-in group card-3d"
                 style={{
-                  animationDelay: `${index * 0.1}s`,
+                  animationDelay: `${index * 0.15}s`,
                 }}
               >
-                <div className="text-6xl mb-4">{product.icon}</div>
+                <div className="text-6xl mb-4 transform group-hover:scale-125 group-hover:animate-wiggle transition-all duration-300">{product.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {product.name}
                 </h3>
                 <p className="text-gray-600 mb-4">{product.description}</p>
                 <button
                   onClick={() => onNavigate('products')}
-                  className="text-green-600 font-semibold hover:text-green-700 flex items-center space-x-2 transition-colors"
+                  className="text-green-600 font-semibold hover:text-green-700 flex items-center space-x-2 transition-all duration-300 transform hover:translate-x-2"
                 >
                   <span>Learn More</span>
-                  <ArrowRight size={18} />
+                  <ArrowRight size={18} className="group-hover:animate-bounce-slow" />
                 </button>
               </div>
             ))}
@@ -152,9 +153,10 @@ export default function Home({ onNavigate }: HomeProps) {
               return (
                 <div
                   key={index}
-                  className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                  className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up group"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     <Icon className="text-green-600" size={32} />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">

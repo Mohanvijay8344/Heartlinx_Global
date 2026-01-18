@@ -34,23 +34,22 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-dark shadow-glow' : 'glass backdrop-blur-lg'
+        }`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div
-            className="flex items-center space-x-3 cursor-pointer"
+            className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => handleNavClick('home')}
           >
             <img
               src="/logo.jpeg"
               alt="HEARTLINX Logo"
-              className="h-12 w-12 object-contain"
+              className="h-12 w-12 object-contain transform group-hover:scale-110 transition-transform duration-300"
             />
             <div>
-              <h1 className="text-xl md:text-2xl font-bold text-gray-800">
+              <h1 className="text-xl md:text-2xl font-bold gradient-text">
                 HEARTLINX
               </h1>
               <p className="text-xs text-gray-600 hidden sm:block">
@@ -64,11 +63,10 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  currentPage === item.id
+                className={`text-sm font-medium transition-colors duration-200 ${currentPage === item.id
                     ? 'text-green-600'
                     : 'text-gray-700 hover:text-green-600'
-                }`}
+                  }`}
               >
                 {item.label}
               </button>
@@ -89,11 +87,10 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors duration-200 ${
-                  currentPage === item.id
+                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors duration-200 ${currentPage === item.id
                     ? 'bg-green-100 text-green-700'
                     : 'text-gray-700 hover:bg-gray-100'
-                }`}
+                  }`}
               >
                 {item.label}
               </button>

@@ -10,6 +10,7 @@ export default function Products({ onNavigate }: ProductsProps) {
       name: 'Turmeric',
       category: 'Spices',
       icon: '🌿',
+      image: '/turmeric.png',
       description:
         'Premium quality turmeric from Erode, known as the turmeric capital of India. Rich in curcumin and natural goodness.',
       features: [
@@ -24,6 +25,7 @@ export default function Products({ onNavigate }: ProductsProps) {
       name: 'Indian Spices',
       category: 'Spices',
       icon: '🌶️',
+      image: '/spices.png',
       description:
         'A wide variety of authentic Indian spices including cardamom, cinnamon, cloves, and more. Sourced from the best regions.',
       features: [
@@ -38,6 +40,7 @@ export default function Products({ onNavigate }: ProductsProps) {
       name: 'Cold Pressed Oils',
       category: 'Edible Oils',
       icon: '🫒',
+      image: '/cold-pressed-oils.png',
       description:
         'Pure and natural cold pressed oils extracted using traditional methods. Includes coconut oil, groundnut oil, sesame oil, and more.',
       features: [
@@ -52,6 +55,7 @@ export default function Products({ onNavigate }: ProductsProps) {
       name: 'Basmati Rice',
       category: 'Rice',
       icon: '🌾',
+      image: '/basmati-rice.png',
       description:
         'Premium long-grain Basmati rice known for its distinctive aroma and fluffy texture. Perfect for international markets.',
       features: [
@@ -66,6 +70,7 @@ export default function Products({ onNavigate }: ProductsProps) {
       name: 'Brown Organic Rice',
       category: 'Rice',
       icon: '🍚',
+      image: '/brown-rice.png',
       description:
         'Nutritious brown rice grown organically without chemical fertilizers. Rich in fiber and essential nutrients.',
       features: [
@@ -80,6 +85,7 @@ export default function Products({ onNavigate }: ProductsProps) {
       name: 'Edible Oils',
       category: 'Oils',
       icon: '🌻',
+      image: '/edible-oils.png',
       description:
         'Various edible oils including sunflower, mustard, and other varieties. High quality and suitable for different culinary needs.',
       features: [
@@ -97,8 +103,8 @@ export default function Products({ onNavigate }: ProductsProps) {
       <section className="bg-gradient-to-br from-green-50 to-amber-50 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up">
-              Our Premium Products
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
+              Our <span className="gradient-text">Premium Products</span>
             </h1>
             <p className="text-xl text-gray-700 leading-relaxed animate-fade-in">
               Discover our range of high-quality Indian commodities ready for
@@ -114,15 +120,25 @@ export default function Products({ onNavigate }: ProductsProps) {
             {products.map((product, index) => (
               <div
                 key={index}
-                className={`bg-gradient-to-br ${product.gradient} rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden group`}
+                className={`bg-gradient-to-br ${product.gradient} rounded-2xl shadow-3d hover:shadow-glow transition-all duration-500 transform hover:-translate-y-3 overflow-hidden group animate-fade-in-left card-3d`}
                 style={{
-                  animationDelay: `${index * 0.1}s`,
+                  animationDelay: `${index * 0.15}s`,
                 }}
               >
-                <div className="p-8">
-                  <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                {/* Product Image */}
+                <div className="relative h-64 overflow-hidden bg-white">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute top-4 right-4 text-5xl transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                     {product.icon}
                   </div>
+                </div>
+
+                <div className="p-8">
                   <div className="text-sm font-semibold text-gray-600 mb-2">
                     {product.category}
                   </div>
@@ -156,7 +172,7 @@ export default function Products({ onNavigate }: ProductsProps) {
                 <div className="bg-white/50 px-8 py-4 border-t border-gray-200">
                   <button
                     onClick={() => onNavigate('contact')}
-                    className="w-full bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300"
+                    className="w-full bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
                   >
                     Request Quote
                   </button>
